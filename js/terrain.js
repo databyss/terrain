@@ -858,7 +858,7 @@ function drawLabels(svg, render) {
     var cities = render.cities;
     var nterrs = render.params.nterrs;
     var avoids = [render.rivers, render.coasts, render.borders];
-    var lang = makeRandomLanguage();
+    var lang = makeBasicLanguage();
     var citylabels = [];
     function penalty(label) {
         var pen = 0;
