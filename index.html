@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <script src="js/d3.min.js"></script>
+        <script src="js/language.js"></script>
+        <script src="js/priority-queue.js"></script>
+        <script src="js/terrain.js"></script>
+        <script>
+            function addSVG(div) {
+                return div.insert("svg", ":first-child")
+                    .attr("height", 600)
+                    .attr("width", 600)
+                    .attr("viewBox", "-500 -500 1000 1000");
+            }
+            window.onload = function() {
+                var finalDiv = d3.select("div#final");
+                var finalSVG = addSVG(finalDiv);
+
+                finalDiv.append("button")
+                    .text("Generate Map")
+                    .on("click", function () {
+                        doMap(finalSVG, defaultParams);
+                    });
+            }
+        </script>
+        <style>
+            path, line {
+                fill: none;
+                stroke: black;
+                stroke-linecap: round;
+            }
+
+            .field {
+                stroke: none;
+                fill-opacity: 1.0;
+            }
+
+            .slope {
+                stroke-width: 1;
+            }
+
+            .river {
+                stroke-width: 2;
+            }
+
+            .coast {
+                stroke-width: 4;
+            }
+
+            .border {
+                stroke-width: 5;
+                stroke-dasharray: 4,4;
+                stroke-linecap: butt;
+            }
+
+            button {
+                float: left;
+                clear: both;
+            }
+
+            svg {
+                float: left;
+                clear: both;
+                background-color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="example" id="final" />
+    </body>
+</html>

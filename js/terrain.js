@@ -1,5 +1,5 @@
 "use strict";
-
+// Forked From: https://github.com/mewo2/terrain
 function runif(lo, hi) {
     return lo + Math.random() * (hi - lo);
 }
